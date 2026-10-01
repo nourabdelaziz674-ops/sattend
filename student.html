@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="student-page">
+
+        <div class="student-content">
+
+
+            
+
+            <div class="image-split">
+
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+
+            </div>
+
+
+           
+
+            <div class="student-form">
+
+                <h1>Student Attendance</h1>
+
+
+                <label>Student ID</label>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="Enter your ID"
+                >
+
+
+                <label>Student Name</label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                >
+
+
+                <label>Group</label>
+
+                <input
+                    type="text"
+                    id="studentGroup"
+                    placeholder="Enter your group"
+                >
+
+
+                <button onclick="generateQR()">
+                    Enter
+                </button>
+
+
+                <div id="qrcode"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QR CODE LIBRARY -->
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+
+    <script>
+
+        function generateQR() {
+
+            let id =
+                document.getElementById("studentId").value;
+
+            let name =
+                document.getElementById("studentName").value;
+
+            let group =
+                document.getElementById("studentGroup").value;
+
+
+            if (id === "" || name === "" || group === "") {
+
+                alert("Please enter your ID, name and group");
+
+                return;
+
+            }
+
+
+            document.getElementById("qrcode").innerHTML = "";
+
+
+            
+
+            let studentData =
+                id + "|" + name + "|" + group;
+
+
+            new QRCode(
+                document.getElementById("qrcode"),
+                studentData
+            );
+
+        }
+        </script>
+         </body> 
+         </html>

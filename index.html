@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="leader-page">
+
+        <h1>Smart Attendance</h1>
+
+        <h2>Welcome, TA 👋</h2>
+      
+<p id="sessionInfo"></p>
+
+<label for="sectionSelect">Section:</label>
+
+<select id="sectionSelect">
+    <option value="Section 1">Section 1</option>
+    <option value="Section 2">Section 2</option>
+    <option value="Section 3">Section 3</option>
+</select>
+   
+</button>
+
+
+        <button onclick="startScanner()">
+            Scan Student QR
+        </button>
+
+        <button onclick="endAttendance()">
+            End Attendance
+        </button>
+<button onclick="resetSection()">
+    Reset Section
+</button>
+
+        <div id="reader"></div>
+
+
+        <div id="studentCard">
+
+            <h2>Student Name</h2>
+
+            <p id="studentName">
+                No student scanned yet
+            </p>
+
+            <p id="attendanceTime"></p>
+
+        </div>
+
+
+        <h3>Today's Attendance</h3>
+
+        <p id="studentCount">
+            0 Students
+        </p>
+
+
+       <h3>Present Students</h3>
+      
+ <input
+    type="text"
+    id="searchInput"
+    placeholder="Search by ID or Name"
+    onkeyup="searchStudents()"
+>
+
+<table id="attendanceTable">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+    <th>Name</th>
+    <th>Group</th>
+    <th>Section</th>
+    <th>Time</th>
+        </tr>
+    </thead>
+
+    <tbody id="attendanceTableBody"></tbody>
+
+</table>
+
+<button onclick="toggleAttendance()">
+    View Attendance
+</button>
+<button onclick="exportAttendance()">
+    Export Attendance
+</button>
+        
+    </div>
+
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+   color: white;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+h3 {
+    margin-top: 50px;
+}
+
+p {
+    font-size: 25px;
+    font-weight: bold;
+}
+.image-split {
+  display: flex;
+  width: 1500px;
+  height: 900px;
+  overflow: hidden; 
+}
+
+.strip {
+  flex: 1;
+  height: 100%;
+  background-image: url("your-image.jpg");
+  background-size: 500% 100%;
+  opacity: 0;
+}
+
+
+.strip:nth-child(1) { background-position: 0% 0%; }
+.strip:nth-child(2) { background-position: 25% 0%; }
+.strip:nth-child(3) { background-position: 50% 0%; }
+.strip:nth-child(4) { background-position: 75% 0%; }
+.strip:nth-child(5) { background-position: 100% 0%; }
+
+
+.strip:nth-child(odd) {
+  animation: slideFromLeft 0.7s ease forwards;
+}
+
+
+.strip:nth-child(even) {
+  animation: slideFromRight 0.7s ease forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.strip:nth-child(1) { animation-delay: 0s; }
+.strip:nth-child(2) { animation-delay: 0.1s; }
+.strip:nth-child(3) { animation-delay: 0.2s; }
+.strip:nth-child(4) { animation-delay: 0.3s; }
+.strip:nth-child(5) { animation-delay: 0.4s; }
+.strip {
+  background-image: url("Gemini_Generated_Image_y315cyy315cyy315.jpe");
+}
+.image-split {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    overflow: hidden;
+    margin: 0 auto;
+}
